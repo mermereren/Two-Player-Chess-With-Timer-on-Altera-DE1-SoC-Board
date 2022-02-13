@@ -25,15 +25,16 @@ Since a square-shaped chess board is implemented to the screen and it is indente
 There are 64 squares on the chess board, so every square has 30x30 pixel resolution before replication. 
 So, we defined an array that keeps the data of pixels of the chess board. This array changes its color data every 30 pixels both in horizontal or vertical. 
 Then the data inside this array is printed to the screen. This resulted in a screen as shown. 
+![](https://github.com/mermereren/Two-Player-Chess-With-Timer-on-Altera-DE1-SoC-Board/blob/main/images/emptyboard.jpg?raw=true)
 
 After printing the empty board, the second task is to print the chess pieces on the screen. This means the pixel data of 30x30 chess piece images are needed. 
 The images we wanted were not available on the internet, so we drew it ourselves with a free online pixel art drawing tool. 
 After drawing the pieces, we transformed those drawings into 30x30 arrays. The arrays are included in the code as a separate txt file. 
-In the array, the elements representing the pixels of the piece are valued as zero.
+In the array, the elements representing the pixels of the piece are valued as zero. After getting the pixel data of each piece, 
+another function that prints these data to the screen is needed. We created another function that takes the most left and the top pixel of each square as a reference, 
+then prints the desired piece with its corresponding color to the desired square of the chess board. The chess board with pieces displayed is shown below.
 
-After getting the pixel data of each piece, another function that prints these data to the screen is needed. 
-We created another function that takes the most left and the top pixel of each square as a reference, 
-then prints the desired piece with its corresponding color to the desired square of the chess board.
+![](https://github.com/mermereren/Two-Player-Chess-With-Timer-on-Altera-DE1-SoC-Board/blob/main/images/boardwithpieces.jpg?raw=true)
 
 ### Using the PS/2 Mouse
 To implement a mouse to this project, the PS2 port of the DE1-SoC board is used. PS/2 mice send the data in 3-byte packets. 
